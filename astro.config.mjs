@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import vercel from "@astrojs/vercel/serverless";
+import netlify from "@astrojs/netlify";
 import tailwind from "@astrojs/tailwind";
 
 const site = "https://wwww.gptsurl.com";
@@ -8,10 +8,6 @@ const site = "https://wwww.gptsurl.com";
 export default defineConfig({
   site,
   output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
+  adapter: netlify(),
   integrations: [tailwind()]
 });
